@@ -43,6 +43,10 @@ body {
     margin-left: 0.7em;
 }
 
+.navBar a:hover {
+    color: lightblue;
+}
+
 .navBar a::before {
     content: '';
     position: absolute;
@@ -50,7 +54,7 @@ body {
     left: 0;
     width: 0;
     height: 0.05em;
-    background: white;
+    background: lightblue;
     transition: .2s;
 }
 
@@ -85,4 +89,20 @@ body {
     padding: 0.1em;
     padding-top: 0;
     padding-bottom: 0;
-    }
+}
+
+.footer a:hover {
+    color: lightblue;
+}
+
+/* main body section */
+
+.mainBody {
+    display: flex;
+    justify-content: center;
+}
+
+.mainBody a {
+    color: white;
+    text-decoration: none;
+}
