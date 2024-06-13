@@ -118,12 +118,21 @@ body {
     height: 100%;
     overflow: auto;
     padding-top: 60px;
-}
-
-.loginContent {
     background-color: white;
     margin: 5% auto 15% auto;
-    width: 80%;
+    width: 60%;
     padding: 16px;
     color: black;
 }
+
+.LoginContent {
+    margin-top: 60px;
+}
+
+.loginSubmit {
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    font-size: 1.5em;
+    padding: 0.75em;
+}   

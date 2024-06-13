@@ -16,12 +16,6 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
@@ -37,7 +31,10 @@
     <div id="header"></div>
     <div class="mainBody">
         <div class="loginBackground">
-            <form id= "loginForm" action="php/action_page.php" method="post">
+            <div class="loginTop">
+                <h2>Database</h2>
+            </div>
+            <form id= "loginForm" method="post">
                 <div class = "loginContent">
                     <label class="container">Username</label>
                     <input type="text" placeholder="Enter Username" name="uname" required>
@@ -45,38 +42,14 @@
                     <label class="container">Password</label>
                     <input type="text" placeholder="Enter Password" name="pswd" required>
     
-                    <button type="submit">Login</button>
-    
-                    <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+                    <!--<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>-->
+
+                    <button class="loginSubmit" type="submit" name="submit">Login</button>
                 </div>
             </form>
         </div>
     </div>
     <div id="footer"></div>
 </body>
-
-
-<script> /* save form data to json */
-    const formElement = document.querySelector('#loginForm')
-
-    const getFormJSON = (form) => {
-      const data = new FormData(form);
-      return Array.from(data.keys()).reduce((result, key) => {
-        result[key] = data.get(key);
-        return result;
-      }, {});
-    };
-
-    const handler = (event) => {
-      event.preventDefault();
-      const valid = formElement.reportValidity();
-      if (valid) {
-        const result = getFormJSON(formElement);
-        console.log(result)
-      }
-    }
-
-    formElement.addEventListener("submit", handler)
-</script>
 
 </html>
