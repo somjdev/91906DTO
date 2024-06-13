@@ -106,3 +106,24 @@ body {
     color: white;
     text-decoration: none;
 }
+
+/* Login Page */
+
+.loginBackground {
+    /*display: none;*/
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.loginContent {
+    background-color: white;
+    margin: 5% auto 15% auto;
+    width: 80%;
+    padding: 16px;
+    color: black;
+}
