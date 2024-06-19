@@ -7,9 +7,13 @@
 
 /* misc */
 body {
+    margin: auto;
+    width: auto;
+    height: 100%;
     background-color: rgb(22,26,29); /* DarkNeutral0 */
     font-family: "PT sans", Helvetica, sans-serif;
     transition: background-color 0.33s;
+    /*overflow-x: hidden;*/
 }
 
 /* site mode slider https://medium.com/@eshanley88/how-to-create-a-light-and-dark-mode-toggle-1b884d510188*/
@@ -20,7 +24,8 @@ body {
     position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
+    margin: 0;
+    width: auto;
     padding: 1em 2.5em;
     background: rgb(16, 18, 20);
     display: flex;
@@ -35,7 +40,16 @@ body {
     text-decoration: none;
 }
 
-.navBar a {
+.navBar ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.navBar li {
+    float: right;
+}
+
+.navBar li a {
     position: relative;
     font-size: 1.5em;
     color: white;
@@ -43,11 +57,11 @@ body {
     margin-left: 0.7em;
 }
 
-.navBar a:hover {
+.navBar li a:hover {
     color: lightblue;
 }
 
-.navBar a::before {
+.navBar li a::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -58,22 +72,22 @@ body {
     transition: .2s;
 }
 
-.navBar a:hover::before {
+.navBar li a:hover::before {
     width: 100%;
 }
 
 /* bottom nav */
 
 .footer {
+    box-sizing: border-box;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 1em 2.5em;
     background: rgb(16, 18, 20);
-    display: flex;
-    justify-content: center;
     z-index: 100;
+    text-align: center;
 }
 
 .footer ul {
@@ -82,7 +96,6 @@ body {
 }
 
 .footer a {
-    position: relative;
     font-size: 2.25em;
     color: white;
     text-decoration: none;
@@ -108,19 +121,17 @@ body {
 }
 
 /* Login Page */
-
 .loginBackground {
     /*display: none;*/
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
     overflow: auto;
     padding-top: 60px;
     background-color: white;
     margin: 5% auto 15% auto;
-    width: 60%;
     padding: 16px;
     color: black;
 }
@@ -129,10 +140,18 @@ body {
     margin-top: 60px;
 }
 
-.loginSubmit {
-    margin-top: 20px;
+input[type=text] {
+    box-sizing: border-box;
     width: 100%;
+    padding: 0.5em 0.2em 0.5em 0.2em;
+    margin-top: 0.5em;
+}
+
+.loginSubmit {
+    text-align: center;
+    margin-top: 20px;
+    width: 30%;
     border: none;
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 0.75em;
 }   

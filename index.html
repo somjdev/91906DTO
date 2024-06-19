@@ -25,6 +25,8 @@
             $("#footer").load("pages/footer.html");
         });
     </script>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -36,10 +38,10 @@
             </div>
             <form id= "loginForm" method="post">
                 <div class = "loginContent">
-                    <label class="container">Username</label>
+                    <label class="loginText"><br>Username<br></label>
                     <input type="text" placeholder="Enter Username" name="uname" required>
-                
-                    <label class="container">Password</label>
+                    <br>
+                    <label class="container"><br>Password<br></label>
                     <input type="text" placeholder="Enter Password" name="pswd" required>
     
                     <!--<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>-->
