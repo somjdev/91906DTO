@@ -10,7 +10,7 @@ body {
     margin: auto;
     width: auto;
     height: 100%;
-    background-color: rgb(22,26,29); /* DarkNeutral0 */
+    background-color: rgb(34,39,43); /* DarkNeutral0 */
     font-family: "PT sans", Helvetica, sans-serif;
     transition: background-color 0.33s;
     /*overflow-x: hidden;*/
@@ -49,7 +49,7 @@ body {
     float: right;
 }
 
-.navBar li a {
+.navBar li a, .navBar li button{
     position: relative;
     font-size: 1.5em;
     color: white;
@@ -57,12 +57,23 @@ body {
     margin-left: 0.7em;
 }
 
-.navBar li a:hover {
+.navBar li button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    margin-left: 0.7em;
+}
+
+.navBar li a:hover, .navBar li button:hover {
     color: lightblue;
 }
 
-.navBar li a::before {
-    content: '';
+.navBar li a::before, .navBar li button::before {
+    content: '';    
     position: absolute;
     top: 100%;
     left: 0;
@@ -72,7 +83,7 @@ body {
     transition: .2s;
 }
 
-.navBar li a:hover::before {
+.navBar li a:hover::before, .navBar li button:hover::before {
     width: 100%;
 }
 
@@ -120,14 +131,16 @@ body {
     text-decoration: none;
 }
 
-/* Login Page */
+/* Login Page REDOING LOGIN 1/7/24*/
 .loginBackground {
-    /*display: none;*/
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
+    display: show;
+    position: fixed;
+    z-index: 101;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 50%;
     overflow: auto;
     padding-top: 60px;
     background-color: white;
@@ -136,15 +149,38 @@ body {
     color: black;
 }
 
-.LoginContent {
-    margin-top: 60px;
+.loginTop {
+    text-align: center;
+    width: 100%;
+}
+
+.loginTop h2 {
+    font-size: 2em;
+}
+
+.loginContent {
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    display: block;    
 }
 
 input[type=text] {
     box-sizing: border-box;
+    border: none;
     width: 100%;
-    padding: 0.5em 0.2em 0.5em 0.2em;
-    margin-top: 0.5em;
+    background-color: whitesmoke;
+    padding: 1em 0.4em 1em 0.4em;
+    margin-top: 0.2em;
+    font-size: 1em;
+}
+
+.formButtonHolder {
+    display: flex;
+    justify-content: center;
+    border: none;
+    width: auto;
 }
 
 .loginSubmit {
@@ -154,4 +190,8 @@ input[type=text] {
     border: none;
     font-size: 1em;
     padding: 0.75em;
-}   
+}
+
+.loginText {
+    font-size: 0.9em;
+}

@@ -21,30 +21,21 @@
 
     <script src="index.js"></script>
 
-    <script>
-        $(function () {
-            $("#header").load("pages/header.html");
-            $("#footer").load("pages/footer.html");
-        });
-    </script>
-
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
-    <div id="header"></div>
-    <div class="mainBody">
+    <div>
         <div class="loginBackground">
             <div class="loginTop">
-                <h2>Database</h2>
+                <h2>Login</h2>
             </div>
             <form id= "loginForm" method="post">
                 <div class="loginContent">
-                    <label for="loginText"><br>Username<br></label>
-                    <input type="text" placeholder="Enter Username (required)" name="uname" required>
-                    <br>
-                    <label for="loginText"><br>Password<br></label>
-                    <input type="text" placeholder="Enter Password (required)" name="pswd" required>
+                    <label class="loginText"></label>
+                    <input type="text" placeholder="Username (required)" name="uname" required>
+                    <label class="loginText"></label>
+                    <input type="text" placeholder="Password (required)" name="pswd" required>
     
                     <!--<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>-->
                     <div class="formButtonHolder">
@@ -55,7 +46,7 @@
             </form>
         </div>
     </div>
-    <div id="footer"></div>
+
 </body>
 
 </html>
