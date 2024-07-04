@@ -155,7 +155,9 @@ body {
 }
 
 .loginTop h2 {
-    font-size: 2em;
+    font-size: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.6em;
 }
 
 .loginContent {
@@ -172,7 +174,7 @@ input[type=text] {
     width: 100%;
     background-color: whitesmoke;
     padding: 1em 0.4em 1em 0.4em;
-    margin-top: 0.2em;
+    margin-top: 1em;
     font-size: 1em;
 }
 
@@ -194,4 +196,49 @@ input[type=text] {
 
 .loginText {
     font-size: 0.9em;
+}
+
+.loginReturn {
+    top: 2%;
+    left: 2%;
+    font-size: 1.5em;
+    position: fixed;
+    color: white;
+    text-decoration: none;
+}
+
+.loginReturn a:visited {
+    color: white;
+}
+
+.loginExtras {
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+/* Divider */
+
+.divider {
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.divider::before, .divider::after {
+    flex: 1;
+    content: "";
+    padding: 0.1em;
+    background-color: black;
+    margin: 0.5em;
+}
+
+.signUpButton {
+    background-color: lightgray;
+    text-align: center;
+    margin-top: 20px;
+    width: 30%;
+    border: none;
+    font-size: 1em;
+    padding: 0.75em;
 }

@@ -26,24 +26,33 @@
 
 <body>
     <div>
+        <div class="loginReturn">
+            <a href="/"><i class="fa-solid fa-arrow-left-long"></i> Go Back</a>
+        </div>
         <div class="loginBackground">
             <div class="loginTop">
                 <h2>Login</h2>
             </div>
-            <form id= "loginForm" method="post">
-                <div class="loginContent">
+            <div class="loginContent">
+                <form id= "loginForm" method="post">
                     <label class="loginText"></label>
                     <input type="text" placeholder="Username (required)" name="uname" required>
                     <label class="loginText"></label>
                     <input type="text" placeholder="Password (required)" name="pswd" required>
-    
+                    <div class="loginExtras">
+                        <input type="checkbox" id="rememberMe"><label for="rememberMe">Remember Me</label>
+                        <a href="/loginpage.html" style="float:right">Forgot Password</a>
+                    </div>
                     <!--<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>-->
                     <div class="formButtonHolder">
                         <button class="loginSubmit" type="submit" name="submit">Login</button>
                     </div>
-                    
+                </form>
+                <div class="divider">OR</div>
+                <div class="formButtonHolder">
+                    <button class="signUpButton">Sign Up</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 
