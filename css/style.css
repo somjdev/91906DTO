@@ -205,6 +205,8 @@ input[type=text] {
     position: fixed;
     color: white;
     text-decoration: none;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
 }
 
 .loginReturn a:visited {
@@ -228,8 +230,8 @@ input[type=text] {
 .divider::before, .divider::after {
     flex: 1;
     content: "";
-    padding: 0.1em;
-    background-color: black;
+    padding: 0.05em;
+    background-color: lightgray;
     margin: 0.5em;
 }
 
