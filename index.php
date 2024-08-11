@@ -33,6 +33,7 @@
 <body>
 	
 	<?php 
+		// if the user is logged in send them to the userpage
 		if (isset($_SESSION['user_id'])) {
 			header("Location: html/userpage.php");
 			exit;

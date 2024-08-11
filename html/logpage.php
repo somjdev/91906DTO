@@ -2,6 +2,7 @@
 <html lang="en">
 
 <?php
+    // intial page setup
     include "head.html";
 
 	session_start();
@@ -12,13 +13,12 @@
 		header("Location: loginform.php");
 	}
 
-    //require "../php/sidebar.php";
-
 	require "../html/footer.html";
 ?>
 
 <body>
     <?php
+        // includes the php file which handles the table
         require_once("../php/logstable.php");
     ?>
 

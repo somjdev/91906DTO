@@ -3,10 +3,11 @@
 <html lang="en">
 
 <?php
+    // intial setup
+    session_start();
     include "head.html";
 
-	session_start();
-
+    // If the user is logged in display the lpgged in header if not display normal header
 	if (isset($_SESSION['user_id'])) {
 		require_once('../html/header-loggedin.html');
 	} else {
@@ -17,12 +18,15 @@
 
     $isvalid = true;
 
+    // checks if the server is using the request method
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mysqli = require "../php/login-database.php";
 
+        // executes SQL query and converts it to an array
         $result = $mysqli->execute_query("SELECT * FROM `user_info` WHERE `uname` = ?", [$_POST['uname']]);
         $user = $result->fetch_assoc();
 
+        //checks if the used data is real by verifying it against the hashed password
         if ($user) {
             if (password_verify($_POST['pswd'], $user["hashed_pswd"])) {
                 
@@ -34,7 +38,7 @@
                 exit;
             }
         }
-        
+        // if the login is invalid retry and send the user an "invalid credentials" error
         $isvalid = false;
     }
 ?>

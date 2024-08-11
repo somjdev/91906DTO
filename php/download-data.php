@@ -1,4 +1,5 @@
 <?php
+// Downloads CSV of users logged information
 session_start();
 
 $mysqli = require "../php/login-database.php";
@@ -6,10 +7,13 @@ $current_id = $_SESSION['user_id'];
 $sql = "SELECT `id`, `title`, `arrival_type`, `log_date`, `arrival_period`, `arrived` 
         FROM `order_log` WHERE owner_id = $current_id";
 
+// Creates a temporary file using the users ID to avoid duplicate names with write only permissions
 $fp = fopen("../tempfiles/file_userid" . $current_id . ".csv", "w");
+// Add headers to CSV file
 fputcsv($fp, array("ID", "Title", "Type", "Date Logged", "Period", "Status"));
 
 $result = $mysqli->execute_query($sql);
+// if there is more than one row then begin downloading
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $row['arrival_period'] = periodConverter($row['arrival_period']);
@@ -20,6 +24,7 @@ if ($result->num_rows > 0) {
 
 fclose($fp);
 
+// Prepping file to download
 $file_path = "../tempfiles/file_userid" . $current_id . ".csv";
 
 if (file_exists($file_path)) {
@@ -30,15 +35,18 @@ if (file_exists($file_path)) {
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
     header('Content-Length: ' . filesize($file_path));
+    // download file
     readfile($file_path);
 }
 
+// delete the file upon it's download by the user
 ignore_user_abort(true);
 unlink($file_path);
 exit;
 
 function periodConverter(int $typeNum)
 {
+    // converts the stored int to plain text
     if ($typeNum === 1) {
         return "Weekly";
     } elseif ($typeNum === 2) {
@@ -60,6 +68,7 @@ function periodConverter(int $typeNum)
 
 function boolToTextArrived($bool)
 {
+    // converts the stored bool to plain text
     if ($bool === true) {
         return "Arrived";
     } else {

@@ -12,6 +12,7 @@
 		header("Location: loginform.php");
 	}
 
+    // includes the side and all of it's functionality
     require "../php/sidebar.php";
 
 	require "../html/footer.html";
@@ -19,6 +20,7 @@
 
 <body>
     <?php
+        // includes the php which contains the table for the page
         require_once("../php/resultstable.php");
     ?>
 

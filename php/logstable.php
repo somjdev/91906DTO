@@ -1,3 +1,4 @@
+<!-- Contains the table for the logpage.php site-->
 <div class="table-div">
     <div class="top-table">
         <form method="get">
@@ -21,6 +22,7 @@
 
         $current_id = $_SESSION['user_id'];
 
+        // Gets relevant information from the database, if there is supplied search information it will be included in the WHERE clause
         if (isset($_GET['search_log'])) {
             $search_title = $_GET['search_content'];
             $sql = "SELECT `id`, `title`, `arrival_type`, `log_date`, `arrival_period`, `arrived` 
@@ -33,6 +35,7 @@
 
         $result = $mysqli->execute_query($sql);
 
+        // if there is more than one row the data will be echo'd to the table row by row
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo ("
@@ -56,6 +59,7 @@
 
         function periodConverter(int $typeNum)
         {
+            // converts int to plain text value
             if ($typeNum === 1) {
                 return "Weekly";
             } elseif ($typeNum === 2) {
@@ -72,11 +76,13 @@
                 return "Annually";
             }
 
+            // Returns place to contact me if the int is out of range
             return "Contact <a href='https://mail.google.com/mail/?view=cm&fs=1&to=support@somj.dev&su=Support%20Ticket' target='_blank'>Support</a>, Query Invalid";
         }
 
         function boolToTextArrived($bool)
         {
+            // converts bool to plain text
             if ($bool == true) {
                 return "Arrived";
             } else {

@@ -1,4 +1,5 @@
 <?php
+// Key database file which allows the php to sql connection
 $host = "localhost";
 $dbname = "dto_db";
 $username = "root";

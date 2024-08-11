@@ -1,4 +1,5 @@
 <?php
+// Checks if the current users login credentials are valid
     $is_invalid = true;
 
     $uname = $_POST["uname"];
@@ -14,7 +15,8 @@
 
         $result = $mysqli->execute_query("SELECT * FROM `user_info` WHERE `uname` = ?", [$uname]);
         $user = $result->fetch_assoc();
-
+        
+        // if the username is correct and the password matches the hash then the user will be logged in
         if ($user) {
             if (password_verify($pswd, $user["hashed_pswd"])) {
                 die("Login Successful");
@@ -22,7 +24,7 @@
         }
     }
 
-    
+    // checks if the hash of the users password is valid, currently not in use as it puts a lot of strain on my computer
     function pswdHash($pswd, $algo, $options, $oldHash) {
         // check if the password needs rehashing
 

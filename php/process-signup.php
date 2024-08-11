@@ -1,4 +1,5 @@
 <?php
+// Proccesses the users signup to the site
 $uname = $_POST["uname"];
 $unameError = "";
 $email = $_POST["email"];
@@ -115,6 +116,7 @@ function passwordChecks($pswd, $confpswd)
 
 function validEmail($email)
 {
+    // checks if the format of the email is correct (xxx@xxx.xxx)
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         die("Email is not valid");
     }

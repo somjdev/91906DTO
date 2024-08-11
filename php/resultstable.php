@@ -1,3 +1,4 @@
+<!-- Table for the main userpage-->
 <div class="table-div">
     <div class="top-table">
         <!-- <form method="get">
@@ -20,8 +21,10 @@
 
         $current_id = $_SESSION['user_id'];
 
-        $result = $mysqli->execute_query("SELECT id, title, arrival_type, arrival_date, arrival_period FROM order_data WHERE owner_id = $current_id");
+        $result = $mysqli->execute_query("SELECT id, title, arrival_type, arrival_date, arrival_period 
+        FROM order_data WHERE owner_id = $current_id");
 
+        // Checks if there is more than one row of data and if there is it will loop through every valid row
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo ("
@@ -45,6 +48,7 @@
 
         function periodConverter(int $typeNum)
         {
+            // converts int to plain text value
             if ($typeNum === 1) {
                 return "Weekly";
             } elseif ($typeNum === 2) {

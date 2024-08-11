@@ -3,17 +3,19 @@
 <html lang="en">
 
 <?php
-    include "head.html";
+// intial page setup
+include "head.html";
 
-	session_start();
+session_start();
 
-	if (isset($_SESSION['user_id'])) {
-		require_once('../html/header-loggedin.html');
-	} else {
-		require_once('../html/header.html');
-	}
+// checks if the user is logged in and if they are display logged in header
+if (isset($_SESSION['user_id'])) {
+    require_once ('../html/header-loggedin.html');
+} else {
+    require_once ('../html/header.html');
+}
 
-	require "../html/footer.html";
+require "../html/footer.html";
 ?>
 
 <body>
@@ -22,11 +24,12 @@
             <div class="loginTop">
                 <h2>Sign Up</h2>
             </div>
+            <!-- Sign Up form it uses Login headers to conserve same CSS, in the future I will swap the names to something more generic-->
             <div class="loginContent">
-                <form id= "loginForm" method="post" action="/php/process-signup.php" novalidate>
+                <form id="loginForm" method="post" action="/php/process-signup.php" novalidate>
                     <label class="loginText"></label>
                     <input type="text" placeholder="Username" name="uname" required>
-                    
+
                     <label class="loginText"></label>
                     <input type="email" placeholder="Email" name="email" required>
 

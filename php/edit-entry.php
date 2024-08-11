@@ -3,8 +3,7 @@ session_start();
 
 $mysqli = require "../php/login-database.php";
 
-print_r($_POST);
-
+// SQL which updates the stored data based on given information
 $sql="
 UPDATE
     `order_data`
@@ -18,6 +17,7 @@ WHERE
     `owner_id` = $_SESSION[user_id]
 ";
 
+// execute query if successful return user if not send user back with information for the popup
 if ($mysqli->execute_query($sql)) {
     header("Location: ../html/userpage.php");
 } else {
