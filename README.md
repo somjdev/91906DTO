@@ -6,4 +6,4 @@ A web server app, such as XAMPP, is required to run the code. This was made with
 ## How to download and setup XAMPP
 Video Guide from Youtube: https://www.youtube.com/watch?v=6WEhuHD184w
 
-To download XAMPP visit their site, https://www.apachefriends.org/download.html, and download the newest version for your device. Run the installer with all the download options enabled. Once installed locate the "htdocs" folder in the /XAMPP/htdocs directory. delete existing folders and paste the github code from this repo into the folder.
+To download XAMPP visit their site, https://www.apachefriends.org/download.html, and download the newest version for your device. Run the installer with all the download options enabled. Once installed locate the "htdocs" folder in the /XAMPP/htdocs directory. Download the files from this github repo and extract them. Delete existing htdocs folders and paste the files within the extracted github folder into the htdocs folder. 
