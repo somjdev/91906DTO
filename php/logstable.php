@@ -20,16 +20,16 @@
         <?php
         $mysqli = require "../php/login-database.php";
 
-        $current_id = $_SESSION['user_id'];
+        $currentID = $_SESSION['userID'];
 
         // Gets relevant information from the database, if there is supplied search information it will be included in the WHERE clause
         if (isset($_GET['search_log'])) {
-            $search_title = $_GET['search_content'];
+            $searchTitle = $_GET['search_content'];
             $sql = "SELECT `id`, `title`, `arrival_type`, `log_date`, `arrival_period`, `arrived` 
-        FROM `order_log` WHERE owner_id = $current_id AND `title` LIKE '%$search_title%'";
+        FROM `order_log` WHERE owner_id = $currentID AND `title` LIKE '%$searchTitle%'";
         } else {
             $sql = "SELECT `id`, `title`, `arrival_type`, `log_date`, `arrival_period`, `arrived` 
-        FROM `order_log` WHERE owner_id = $current_id";
+        FROM `order_log` WHERE owner_id = $currentID";
         }
 
 
