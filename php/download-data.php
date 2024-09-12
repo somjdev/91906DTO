@@ -3,12 +3,12 @@
 session_start();
 
 $mysqli = require "../php/login-database.php";
-$current_id = $_SESSION['user_id'];
+$currentID = $_SESSION['userID'];
 $sql = "SELECT `id`, `title`, `arrival_type`, `log_date`, `arrival_period`, `arrived` 
-        FROM `order_log` WHERE owner_id = $current_id";
+        FROM `order_log` WHERE owner_id = $currentID";
 
 // Creates a temporary file using the users ID to avoid duplicate names with write only permissions
-$fp = fopen("../tempfiles/file_userid" . $current_id . ".csv", "w");
+$fp = fopen("../tempfiles/file_userid" . $currentID . ".csv", "w");
 // Add headers to CSV file
 fputcsv($fp, array("ID", "Title", "Type", "Date Logged", "Period", "Status"));
 
@@ -25,23 +25,23 @@ if ($result->num_rows > 0) {
 fclose($fp);
 
 // Prepping file to download
-$file_path = "../tempfiles/file_userid" . $current_id . ".csv";
+$filePath = "../tempfiles/file_userid" . $currentID . ".csv";
 
-if (file_exists($file_path)) {
+if (file_exists($filePath)) {
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="' . basename($file_path) . '"');
+    header('Content-Disposition: attachment; filename="' . basename($filePath) . '"');
     header('Expires: 0');
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
-    header('Content-Length: ' . filesize($file_path));
+    header('Content-Length: ' . filesize($filePath));
     // download file
-    readfile($file_path);
+    readfile($filePath);
 }
 
 // delete the file upon it's download by the user
 ignore_user_abort(true);
-unlink($file_path);
+unlink($filePath);
 exit;
 
 function periodConverter(int $typeNum)
