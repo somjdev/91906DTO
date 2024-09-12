@@ -19,7 +19,7 @@
         <?php
         $mysqli = require "../php/login-database.php";
 
-        $current_id = $_SESSION['user_id'];
+        $current_id = $_SESSION['userID'];
 
         $result = $mysqli->execute_query("SELECT id, title, arrival_type, arrival_date, arrival_period 
         FROM order_data WHERE owner_id = $current_id");
