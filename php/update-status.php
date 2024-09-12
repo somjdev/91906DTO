@@ -5,14 +5,14 @@ session_start();
 $mysqli = require "../php/login-database.php";
 
 $item = $_GET['id'];
-$cur_status = $_GET['type'];
-$owner_id = $_SESSION['user_id'];
+$curStatus = $_GET['type'];
+$ownerID = $_SESSION['userID'];
 
 // if true change to false if false change to true
-if ($cur_status) {
-    $sql = "UPDATE `order_log` SET `arrived`='0' WHERE `id`='$item' AND `owner_id` = '$owner_id'";
+if ($curStatus) {
+    $sql = "UPDATE `order_log` SET `arrived`='0' WHERE `id`='$item' AND `ownerID` = '$ownerID'";
 } else {
-    $sql = "UPDATE `order_log` SET `arrived`='1' WHERE `id`='$item' AND `owner_id` = '$owner_id'";
+    $sql = "UPDATE `order_log` SET `arrived`='1' WHERE `id`='$item' AND `ownerID` = '$ownerID'";
 }
 
 // Return upon success
