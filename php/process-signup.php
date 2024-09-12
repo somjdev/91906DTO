@@ -1,5 +1,5 @@
 <?php
-// Proccesses the users signup to the site
+// Proccesses the users signup to the site, WIP variables for storing an error code have been added, in the future these will be used to display the error to the user in the panel rather than redirecting them to a page
 $uname = $_POST["uname"];
 $unameError = "";
 $email = $_POST["email"];
