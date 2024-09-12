@@ -6,7 +6,7 @@
 
 	session_start();
 
-	if (isset($_SESSION['user_id'])) {
+	if (isset($_SESSION['userID'])) {
 		require_once('../html/header-loggedin.html');
 	} else {
 		header("Location: loginform.php");
