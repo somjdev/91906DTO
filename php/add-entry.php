@@ -9,7 +9,7 @@ $arrival_type = $_POST["type"];
 $arrival_date = $_POST["arrival"];
 $arrival_period = $_POST["period"];
 
-
+// Prepared SQL statement
 $sql = "INSERT INTO `order_data` (`id`, `owner_id`, `title`, `arrival_type`, `arrival_date`, `arrival_period`) 
 VALUES (NULL, '$owner_id', '$title', '$arrival_type', '$arrival_date', '$arrival_period')";
 
