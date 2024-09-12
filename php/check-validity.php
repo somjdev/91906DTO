@@ -3,7 +3,7 @@
 session_start();
 $mysqli = require "../php/login-database.php";
 
-$userID = $_SESSION['user_id'];
+$userID = $_SESSION['userID'];
 $itemID = $_GET['id'];
 
 // SQL query which returns information if the owner id matches current user id and the supplied id is valid
