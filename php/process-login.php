@@ -1,6 +1,6 @@
 <?php
 // Checks if the current users login credentials are valid
-    $is_invalid = true;
+    $isInvalid = true;
 
     $uname = $_POST["uname"];
     $unameError = "";
