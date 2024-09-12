@@ -3,7 +3,7 @@ session_start();
 $mysqli = require "../php/login-database.php";
 
 // defines all variables for ease of use
-$ownerID = $_SESSION["user_id"];
+$ownerID = $_SESSION["userID"];
 $title = $_POST["title"];
 $arrivalType = $_POST["type"];
 $arrivalDate = $_POST["arrival"];
