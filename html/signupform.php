@@ -9,7 +9,7 @@ include "head.html";
 session_start();
 
 // checks if the user is logged in and if they are display logged in header
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['userID'])) {
     require_once ('../html/header-loggedin.html');
 } else {
     require_once ('../html/header.html');
