@@ -19,10 +19,10 @@
         <?php
         $mysqli = require "../php/login-database.php";
 
-        $current_id = $_SESSION['userID'];
+        $currentID = $_SESSION['userID'];
 
         $result = $mysqli->execute_query("SELECT id, title, arrival_type, arrival_date, arrival_period 
-        FROM order_data WHERE owner_id = $current_id");
+        FROM order_data WHERE owner_id = $currentID");
 
         // Checks if there is more than one row of data and if there is it will loop through every valid row
         if ($result->num_rows > 0) {
