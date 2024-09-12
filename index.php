@@ -4,7 +4,7 @@
 <?php
 	session_start();
 
-	if (isset($_SESSION['user_id'])) {
+	if (isset($_SESSION['userID'])) {
 		require_once('html/header-loggedin.html');
 	} else {
 		require_once('html/header.html');
@@ -34,7 +34,7 @@
 	
 	<?php 
 		// if the user is logged in send them to the userpage
-		if (isset($_SESSION['user_id'])) {
+		if (isset($_SESSION['userID'])) {
 			header("Location: html/userpage.php");
 			exit;
 		} 
