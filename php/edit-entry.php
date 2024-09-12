@@ -14,7 +14,7 @@ SET
     `arrival_date` = '$_POST[arrival]',
     `arrival_period` = '$_POST[period]'
 WHERE
-    `owner_id` = $_SESSION[user_id]
+    `owner_id` = $_SESSION[userID]
 ";
 
 // execute query if successful return user if not send user back with information for the popup
