@@ -8,7 +8,7 @@
     include "head.html";
 
     // If the user is logged in display the lpgged in header if not display normal header
-	if (isset($_SESSION['user_id'])) {
+	if (isset($_SESSION['userID'])) {
 		require_once('../html/header-loggedin.html');
 	} else {
 		require_once('../html/header.html');
@@ -16,7 +16,7 @@
 
 	require "../html/footer.html";
 
-    $isvalid = true;
+    $isValid = true;
 
     // checks if the server is using the request method
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -32,14 +32,14 @@
                 
                 session_start();
                 
-                $_SESSION["user_id"] = $user["id"];
+                $_SESSION["userID"] = $user["id"];
 
                 header("Location: ../index.php");
                 exit;
             }
         }
         // if the login is invalid retry and send the user an "invalid credentials" error
-        $isvalid = false;
+        $isValid = false;
     }
 ?>
 
@@ -50,7 +50,7 @@
                 <h2>Login</h2>
             </div>
             <div class="loginContent">
-                <?php if (!$isvalid): ?>
+                <?php if (!$isValid): ?>
                     <em>Invalid Credentials</em>
                 <?php endif; ?>
                 <form id= "loginForm" method="post">
