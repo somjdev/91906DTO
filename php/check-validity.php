@@ -22,6 +22,7 @@ $data = $result->fetch_assoc();
 
 // if the result is valid send get request to userpage containing retrieved information if not return user with no information and prompt an error message
 if ($result) {
+    // Link contains GET data surrounding item information
     header("Location:../html/userpage.php?edit&id=$item_id&title=$data[title]&type=$data[arrival_type]&date=$data[arrival_date]&period=$data[arrival_period]");
 } else {
     header("Location: ../html/userpage.php");
